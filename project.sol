@@ -19,7 +19,7 @@ pragma solidity ^0.8.0;
         _;
     }
 
-    function addTask(string calldata _task) external{
+    function addTask(string calldata _task) onlyOwner external{
         require(bytes(_task).length > 0, "Task name cannot be empty");
         
         
