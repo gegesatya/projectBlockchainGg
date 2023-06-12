@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+	<style>
+		.card-container {
+			width: 500px;
+			height: 700px;
+			background: #a1a5a8;
+			border: 1px solid #a1a5a8;
+			opacity: 1;
+			margin-right: auto;
+			margin-left: auto;
+			border-left: 0;
+		}
+
+		.icon-circle {
+			background: white;
+			border-radius: 200px;
+			height: 70px;
+			font-weight: bold;
+			width: 70px;
+			display: table;
+			margin-top: 12px;
+			margin-left: 31px;
+		}
+
+		.bloc {
+			margin-top: 12px;
+			margin-left: 28px;
+		}
+
+		.task-count {
+			margin-top: 7px;
+			margin-left: 31px;
+		}
+
+		.task-card {
+			width: 500px;
+			height: 650px;
+			border: 1px solid #FFFFFF;
+			background: #FFFFFF;
+			opacity: 1;
+			position: relative;
+		}
+
+		.fab {
+			background: #4f5153;
+			border-radius: 200px;
+			height: 40px;
+			width: 40px;
+			font-weight: bold;
+			border: 0;
+			position: relative;
+			right: 0; 
+			bottom: 0;
+			margin-right: 27px;
+			margin-bottom: 31px;
+		}
+
+		.add-task-container {
+			top: 350px;
+			width: 500px;
+			height: 187px;
+			background: #FFFFFF;
+			opacity: 1;
+			position: absolute;
+		}
+		.remove-task-container {
+			top: 350px;
+			width: 500px;
+			height: 187px;
+			background: #FFFFFF;
+			opacity: 1;
+			position: absolute;
+		}
+
+		.task-done {
+			color: gray;
+			text-decoration: line-through;
+		}
+	</style>
+	<title>Todo List Blockchain</title>
+</head>
+
+<body style="background: #0b753b">
+	<div class="card-container my-10 border-left-0">
+		
+		<h2 class="bloc text-white"><strong>TODO LIST</strong></h1>
+			<p id="taskCount" class="task-count text-white">0 Task</p>
+
+			<div class="task-card">
+				
+
+				<ul id="list" class="list-group mt-3">
+				</ul>
+
+				<div id="add-task-container" class="modal add-task-container" data-backdrop="static">
+					<div class="container" id="add-task-form">
+						<form id="add-task-form">
+							<div class="col mx-2">
+								<h5 class="text-primary text-center mt-4">New Task</h5>
+								<input id="new-task" class="col-md-12 mt-3" type="text">
+								<button type="button" data-dismiss="modal" class="btn btn-primary btn-block mt-3"
+									onclick="addTask(document.getElementById('new-task').value);">Add
+									Task</button>
+							</div>
+						</form>
+						
+					</div>
+				</div>
+
+				<div id="remove-task-container" class="modal remove-task-container" data-backdrop="static">
+					<div class="container" id="remove-task-form">
+						<form id="remove-task-form">
+							<div class="col mx-2">
+								<h5 class="text-primary text-center mt-4">Remove Task</h5>
+								<input id="remove-task" class="col-md-12 mt-3" type="text">
+								<button type="button" data-dismiss="modal" class="btn btn-danger btn-block mt-3"
+									onclick="removeTask(document.getElementById('remove-task').value);">Remove
+									Task</button>
+							</div>
+						</form>
+						
+					</div>
+				</div>
+
+				<button id="fab" class="fab float-right" data-toggle="modal" data-target="#add-task-container">
+					<i class="fa-solid fa-plus" style="color: #ffffff;"></i>
+				</button>
+				<button id="fab" class="fab float-right" data-toggle="modal" data-target="#remove-task-container">
+					<i class="fa-solid fa-minus" style="color: #ffffff;"></i>
+				</button>
+			</div>
+			
+	</div>
+	<script src="./node_modules/web3/dist/web3.min.js"></script>
+
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+		integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+		crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+		integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+		crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+		integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+		crossorigin="anonymous"></script>
+	
+		
+	<script src="js/config.js"></script>
+	<script src="js/getAccount.js"></script>
+	<script src="js/app.js"></script>
+</body>
+
+</html>
