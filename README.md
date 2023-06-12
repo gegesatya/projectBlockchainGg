@@ -13,3 +13,4 @@ Untuk smart contract terdiri dari beberapa fungsi:
 4. deleteTask akan menghapus task by index
 5. getTaskCount akan mengembalikan jumlah task yang ada di blockchain
 
+Untuk aplikasi ini, sudah dicoba dengan menggunakan Ganache
